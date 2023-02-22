@@ -1,2 +1,5 @@
-# calorie
-Making the same Web Application in Different Frameworks
+# Calorie
+
+I'm making the same web application in different **Web Frameworks**.
+
+I'm giving myself a month to work with each framework.
