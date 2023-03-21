@@ -16,7 +16,7 @@ export class DatabaseService {
   constructor() { }
 
   public memory = new class {
-    private diets:Diet[] = [
+    private diets: Diet[] = [
       {
         "id": 0,
         "userID": 1,
@@ -98,17 +98,17 @@ export class DatabaseService {
 
       for (let index = 0; index < userNames.split(",").length; index++) {
 
-        let tmpFoodArr:DietFoodItem[] = Array(random.int(0, 10)).fill("").map((i)=>{
-          var tmpObj:DietFoodItem = {}
+        let tmpFoodArr: DietFoodItem[] = Array(random.int(0, 10)).fill("").map((i) => {
+          var tmpObj: DietFoodItem = {}
           let key = foodNames.split(",")[random.int(0, foodNames.split(",").length - 1)]
-          tmpObj[key] = random.int(100,600)
+          tmpObj[key] = random.int(100, 600)
 
           return tmpObj;
         })
         this.diets.push({
           id: index,
           userID: random.int(0, userNames.split(",").length),
-          food : tmpFoodArr,
+          food: tmpFoodArr,
         })
       }
 
@@ -118,8 +118,39 @@ export class DatabaseService {
     /**
      * getDiets
      */
-    public getDiets():Diet[] {
+    public getDiets(): Diet[] {
       return this.diets;
+    }
+
+    /**
+     * getUsers
+     */
+    public getUsers() {
+      return this.users;
+    }
+
+    /**
+     * createUser
+     */
+    public createUser(firstname: string, lastname: string):User {
+      let newUser:User = {
+        id: _.last(this.users) ? _.last(this.users)!.id + 1 : 0,
+        firstname,
+        lastname
+      };
+      
+      this.users.push(newUser)
+
+      return newUser;
+    }
+
+    /**
+     * removeUser
+     */
+    public removeUser(id: Number) {
+      _.remove(this.users, (item) => {
+        return item.id == id;
+      })
     }
   }
 }

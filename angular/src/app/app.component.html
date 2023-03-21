@@ -8,7 +8,7 @@
     </ul>
   </li>
 </ul> -->
-
+<h1>Diets</h1>
 <div class="flex flex-wrap">
   <app-diet-card *ngFor="let item of diets" [diet] = "item"></app-diet-card>
   <!-- <div *ngFor="let diet of diets" class="w-32 rounded-lg shadow-md">
@@ -17,4 +17,22 @@
       {{food | dietFoodItemPipe}}
     </p>
   </div> -->
+</div>
+
+<h1>Users</h1>
+<div class="flex flex-wrap">
+  <app-user-card *ngFor="let item of users" [user] = "item"></app-user-card>
+</div>
+
+<div class="pt-10">
+  <h1 class="text-lg">Create User</h1>
+  <form [formGroup]="createUserForm" (ngSubmit) = "createUser()">
+    <label for="firstname">
+      <input type="text" name="firstname" formControlName="firstname" placeholder="First Name">
+    </label>
+    <label for="lastname">
+      <input type="text" name="lastname" formControlName="lastname" placeholder="Last Name">
+    </label>
+    <input type="submit" value="Create New User">
+  </form>
 </div>

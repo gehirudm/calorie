@@ -1,14 +1,14 @@
 export interface User {
-    "id": Number,
-    "firstname": String,
-    "lastname": String,
+    "id": number,
+    "firstname": string,
+    "lastname": string,
 }
 
 export interface Food {
-    "id": String,
-    "name": String,
-    "description": String,
-    "calories": Number,
+    "id": string,
+    "name": string,
+    "description": string,
+    "calories": number,
 }
 
 export interface DietFoodItem {
@@ -16,7 +16,7 @@ export interface DietFoodItem {
 }
 
 export interface Diet {
-    "id": Number,
-    "userID": Number,
+    "id": number,
+    "userID": number,
     "food": DietFoodItem[]
 }
