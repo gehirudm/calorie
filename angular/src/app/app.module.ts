@@ -7,11 +7,13 @@ import { dietFoodItemPipe } from './pipes/dietFoodItem.pipe';
 import { DietCardComponent } from './components/diet-card/diet-card.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { fullNamePipe } from './pipes/fullName.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     dietFoodItemPipe,
+    fullNamePipe,
     DietCardComponent,
     UserCardComponent
   ],
