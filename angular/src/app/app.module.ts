@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { dietFoodItemPipe } from './pipes/dietFoodItem.pipe';
+import { DietCardComponent } from './components/diet-card/diet-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    dietFoodItemPipe,
+    DietCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

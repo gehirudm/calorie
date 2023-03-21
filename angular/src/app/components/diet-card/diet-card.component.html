@@ -1,0 +1,6 @@
+<div class="w-64 rounded-lg shadow-md">
+    <p class="text-lg">Item ID : {{diet.id}} | User ID {{diet.userID}}</p>
+    <p class="text-slate-700" *ngFor="let food of diet.food">
+        {{food | dietFoodItemPipe}}
+    </p>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Diet } from './models/database.type';
+import { DatabaseService } from './services/database.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  public diets: Diet[] = [];
+
+  constructor(private db: DatabaseService) {
+    this.diets = db.memory.getDiets();
+  }
 }
